@@ -1,0 +1,99 @@
+@mixin min-max($min-width, $max-width, $padding){
+  min-width:$min-width;
+  max-width:$max-width;
+  padding:0 $padding;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+@mixin button-blue(){
+  color: var(--white);
+  background-color: var(--blue-color);
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  padding: 10px 40px;
+  font-family: 'Hind', sans-serif;
+  transition: all 0.3s ease;
+  cursor: pointer;
+    &:hover{
+      background-color: var(--white);
+      color: var(--blue-color);
+      border: 1px solid var(--blue-color);
+    }
+}
+
+@mixin button-blue-small(){
+  color: var(--white);
+  background-color: var(--blue-color);
+  border: none;
+  border-radius: 50px;
+  font-weight: 300;
+  font-size: 12px;
+  padding: 3px 15px;
+  font-family: 'Hind', sans-serif;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  &:hover{
+    background-color: var(--white);
+    color: var(--blue-color);
+    border: 1px solid var(--blue-color);
+  }
+}
+
+@mixin button-pink-small(){
+  color: var(--white);
+  background-color: var(--pink);
+  border: none;
+  border-radius: 50px;
+  font-weight: 300;
+  font-size: 12px;
+  padding: 3px 15px;
+  font-family: 'Hind', sans-serif;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  &:hover{
+    background-color: var(--white);
+    color: var(--pink);
+    border: 1px solid var(--pink);
+  }
+}
+
+@mixin centered(){
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin coverdiv(){
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content
+  }
+
+  &:-moz-placeholder {
+    @content
+  }
+
+  &::-moz-placeholder {
+    @content
+  }
+
+  &:-ms-input-placeholder {
+    @content
+  }
+}
+
+@mixin transition($prop: all, $dur: 0.3s, $ease: ease) {
+  -webkit-transition: $prop $dur $ease;
+  -moz-transition   : $prop $dur $ease;
+  transition        : $prop $dur $ease;
+}
